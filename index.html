@@ -1,15 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>hykw-r</title>
-    <link rel="icon" href="favicon.ico">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6063068169049600"
-     crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <main>
-      <h1>工事中</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAYAKAWA REO | PORTFOLIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f7f7f4;
+            --pink: #fa46a4; /* 参考画像に近いビビッドピンク */
+            --green: #cbe3d3; /* 薄い緑 */
+            --yellow: #e4ff00; /* ネオンイエロー */
+            --line: #d1d1d1;
+            --text-main: #1a1a1a;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'IBM Plex Mono', monospace; /* 製図っぽいフォント */
+            overflow-x: hidden;
+        }
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--pink);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+        }
+        /* 罫線デザイン */
+        .border-draft {
+            border: 1px solid var(--line);
+        }
+        .border-b-draft {
+            border-bottom: 1px solid var(--line);
+        }
+        .border-r-draft {
+            border-right: 1px solid var(--line);
+        }
+        .border-l-draft {
+            border-left: 1px solid var(--line);
+        }
+        
+        /* 情報を論理的に区切るブロック */
+        .info-block {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .info-block:hover {
+            background-color: rgba(203, 227, 211, 0.4); /* 薄い緑のホバーで分かりやすく */
+        }
+
+        /* ゆったりしたフェードイン (情報処理の焦りをなくす) */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 装飾の図形（参考画像リスペクト） */
+        .circle-accent {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--yellow);
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .social-link {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .social-link:hover {
+            background-color: rgba(203, 227, 211, 0.6);
+            border-color: var(--text-main);
+        }
+        .social-link:hover .social-icon {
+            color: var(--pink);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-pink-500 selection:text-white">
+
+    <!-- Header / Hero Section -->
+    <header class="w-full border-b-draft p-4 md:p-8 relative overflow-hidden">
+        <!-- 検査結果にあったIDをデザインのアクセントとして配置 -->
+        <div class="absolute top-4 right-4 text-xs text-gray-400 flex items-center gap-2">
+            <span>v1.0.0</span>
+            <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto pt-20 pb-10">
+            <h1 class="font-display text-[15vw] md:text-[16vw] uppercase m-0 p-0 fade-in-up">
+                HAYAKAWA
+            </h1>
+            <h1 class="font-display text-[15vw] md:text-[16vw] uppercase m-0 p-0 flex items-center gap-4 md:gap-6 fade-in-up" style="transition-delay: 0.2s;">
+                REO
+                <img src="assets/icon.png" alt="" class="h-[0.85em] w-auto object-contain shrink-0" width="128" height="128">
+            </h1>
+            
+            <div class="mt-8 flex flex-wrap gap-3 fade-in-up" style="transition-delay: 0.4s;">
+                <a href="https://github.com/hykw-r" target="_blank" rel="noopener noreferrer" aria-label="GitHub: hykw-r" class="social-link border-draft bg-white px-4 py-3 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-800">
+                    <svg class="social-icon w-5 h-5 shrink-0 text-gray-900 transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://sketchfab.com/hykw-r" target="_blank" rel="noopener noreferrer" aria-label="Sketchfab: hykw-r" class="social-link border-draft bg-white px-4 py-3 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-gray-800">
+                    <svg class="social-icon w-5 h-5 shrink-0 text-gray-900 transition-colors" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 .297c-.135 0-.271.014-.405.043L.661 3.671A1.108 1.108 0 0 0 0 4.723v14.554a1.108 1.108 0 0 0 .661 1.052l10.934 3.331c.135.028.27.043.405.043s.271-.015.405-.043l10.934-3.331A1.108 1.108 0 0 0 24 19.277V4.723a1.108 1.108 0 0 0-.661-1.052L12.405.34A1.098 1.098 0 0 0 12 .297zM1.108 5.193l9.861 2.998v9.618L1.108 14.81V5.193zm11.784 2.998 9.861-2.998v9.618l-9.861 2.998V8.191z"/>
+                    </svg>
+                    Sketchfab
+                </a>
+            </div>
+            
+            <!-- 製図風のあしらい -->
+            <!-- <div class="mt-8 flex flex-wrap gap-4 fade-in-up" style="transition-delay: 0.4s;">
+                <div class="border-draft bg-[#cbe3d3] p-2 flex items-center justify-between w-48 text-xs">
+                    <span>PORTFOLIO</span>
+                    <div class="circle-accent w-6 h-6 bg-pink-500 text-white font-bold border-none">R</div>
+                </div>
+                <div class="border-draft bg-white p-2 text-xs flex items-center gap-2 w-32">
+                    <span class="block w-full border-b border-dashed border-gray-400"></span>
+                    <span>MONO</span>
+                </div>
+            </div> -->
+        </div>
+    </header>
+
+    <!--
+    Main Content
+    <main class="flex-grow w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border-l-draft border-r-draft border-t-0">
+        
+        About Section
+        <section class="md:col-span-5 border-b-draft md:border-b-0 md:border-r-draft p-6 md:p-10 fade-in-up">
+            <div class="flex justify-between items-start mb-12">
+                <h2 class="text-xl font-bold uppercase tracking-widest text-gray-800">.About</h2>
+                <div class="circle-accent">A</div>
+            </div>
+            
+            <div class="space-y-6 text-sm leading-relaxed text-gray-700">
+                <p>
+                    こんにちは、ハヤカワ レオです。情報を論理的に整理し、直感的に見通しを立てられるデザインを得意としています。
+                </p>
+                <p>
+                    複雑な要件を、パッと見て全体像が掴める形に変換することに喜びを感じます。過剰な装飾よりも、骨格となる構造と大胆なタイポグラフィによる明確なメッセージの伝達を重視しています。
+                </p>
+                <div class="mt-8 pt-6 border-t border-dashed border-gray-300">
+                    <h3 class="font-bold mb-4 text-xs text-gray-400 uppercase tracking-widest">Strengths</h3>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-center gap-3">
+                            <span class="w-4 h-4 bg-[#cbe3d3] border border-gray-300 rounded-sm inline-block"></span> 
+                            視覚的な情報構造の設計
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-4 h-4 bg-[#fa46a4] border border-gray-300 rounded-full inline-block"></span> 
+                            大胆なタイポグラフィ
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-4 h-4 bg-[#e4ff00] border border-gray-300 rounded-sm inline-block transform rotate-45"></span> 
+                            全体を見通したコンセプト立案
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        Works & Contact Section
+        <div class="md:col-span-7 flex flex-col">
+            
+            Works Section
+            <section class="flex-grow border-b-draft bg-white">
+                <div class="p-6 md:p-10 border-b-draft flex justify-between items-center fade-in-up">
+                    <h2 class="text-xl font-bold uppercase tracking-widest text-gray-800">.Works</h2>
+                    <div class="circle-accent bg-transparent border-gray-400 text-gray-400">W</div>
+                </div>
+                
+                <div class="grid grid-cols-1">
+                    Work Item 1
+                    <article class="info-block p-6 md:p-8 border-b-draft fade-in-up cursor-pointer group">
+                        <div class="flex flex-col md:flex-row justify-between md:items-end gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block font-bold">2023 / BRANDING</span>
+                                <h3 class="text-3xl font-bold font-display text-gray-900 group-hover:text-[var(--pink)] transition-colors">MONO-SEMI-POLY</h3>
+                            </div>
+                            <div class="text-sm font-bold text-gray-500 group-hover:text-gray-900 transition-colors">View Project &rarr;</div>
+                        </div>
+                    </article>
+
+                    Work Item 2
+                    <article class="info-block p-6 md:p-8 border-b-draft fade-in-up cursor-pointer group">
+                        <div class="flex flex-col md:flex-row justify-between md:items-end gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block font-bold">2022 / TYPOGRAPHY</span>
+                                <h3 class="text-3xl font-bold font-display text-gray-900 group-hover:text-[var(--pink)] transition-colors">GT MECHANIK POSTER</h3>
+                            </div>
+                            <div class="text-sm font-bold text-gray-500 group-hover:text-gray-900 transition-colors">View Project &rarr;</div>
+                        </div>
+                    </article>
+
+                    Work Item 3
+                    <article class="info-block p-6 md:p-8 fade-in-up cursor-pointer group">
+                        <div class="flex flex-col md:flex-row justify-between md:items-end gap-4">
+                            <div>
+                                <span class="text-xs text-gray-400 mb-1 block font-bold">2021 / WEB DESIGN</span>
+                                <h3 class="text-3xl font-bold font-display text-gray-900 group-hover:text-[var(--pink)] transition-colors">LOGICAL STRUCTURE UI</h3>
+                            </div>
+                            <div class="text-sm font-bold text-gray-500 group-hover:text-gray-900 transition-colors">View Project &rarr;</div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            Contact Section
+            <section class="p-6 md:p-10 fade-in-up bg-[#e4ff00]">
+                <h2 class="text-xl font-bold uppercase tracking-widest text-gray-900 mb-6">.Contact</h2>
+                <div class="flex flex-col md:flex-row gap-8 justify-between items-start md:items-center">
+                    <p class="text-sm text-gray-800 max-w-sm font-bold">
+                        お仕事のご依頼やご相談は、ご自身のペースでゆっくりとメールにてお送りください。
+                    </p>
+                    <a href="#" class="inline-block border-2 border-gray-900 px-6 py-3 font-bold hover:bg-gray-900 hover:text-[#e4ff00] transition-colors whitespace-nowrap">
+                        HELLO@EXAMPLE.COM
+                    </a>
+                </div>
+            </section>
+        </div>
     </main>
-  </body>
- </html>
+    -->
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-draft p-6 text-center text-xs text-gray-400 bg-white">
+        &copy; 2026 HAYAKAWA REO. ALL RIGHTS RESERVED.
+    </footer>
+
+    <!-- ゆったりとしたスクロールアニメーション -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
